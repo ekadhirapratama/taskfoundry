@@ -1,0 +1,18 @@
+{
+  "name": "taskfoundry",
+  "description": "Daily solo-dev workflow: morning review, MOM logging, plan, and execution as slash commands",
+  "version": "0.1.0",
+  "author": {
+    "name": "Eka Dhira Pratama",
+    "email": "eka.dhirapratama@gmail.com"
+  },
+  "homepage": "https://github.com/ekadhirapratama/taskfoundry",
+  "repository": "https://github.com/ekadhirapratama/taskfoundry",
+  "license": "MIT",
+  "keywords": [
+    "daily-workflow",
+    "planning",
+    "pull-request",
+    "productivity"
+  ]
+}

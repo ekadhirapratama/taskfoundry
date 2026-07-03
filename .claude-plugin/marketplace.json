@@ -1,0 +1,20 @@
+{
+  "name": "taskfoundry",
+  "description": "Marketplace for the taskfoundry daily workflow plugin",
+  "owner": {
+    "name": "Eka Dhira Pratama",
+    "email": "eka.dhirapratama@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "taskfoundry",
+      "description": "Daily solo-dev workflow: morning review, MOM logging, plan, and execution as slash commands",
+      "version": "0.1.0",
+      "source": "./",
+      "author": {
+        "name": "Eka Dhira Pratama",
+        "email": "eka.dhirapratama@gmail.com"
+      }
+    }
+  ]
+}
