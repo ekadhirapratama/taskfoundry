@@ -18,11 +18,12 @@ Turn today's new tasks (from MOM or mastersheet, surfaced by `/taskfoundry:summa
 3. **Clarify ambiguous tasks**: ask one question at a time, don't assume — the same discipline `superpowers:brainstorming` uses for bigger features, applied at daily-task scale.
 4. **Write the plan** using `references/template-plan-structure.md` as the structural reference. Every plan MUST start with a `Source` field recording where the task came from: a mastersheet link, ticket ID, or `direct request`. This is what lets `/taskfoundry:develop` fill the PR's `Related` section later without guessing.
 5. **Decide where to save the plan doc**:
-   - Check whether the target repo already has an established convention — an existing `docs/plans/` directory with prior dated files, or a note in that repo's `CLAUDE.md`.
+   - Check whether the target repo already has an established convention — an existing plan-docs directory with prior dated files, or a note in that repo's `CLAUDE.md`.
    - If a convention exists, follow it.
-   - If nothing is found (first time using `/taskfoundry:plan` in this repo), ask the user once where plan docs should live, then record the answer in that repo's `CLAUDE.md` (e.g. `Plan docs go in docs/plans/YYYY-MM-DD-<topic>.md`) so the question isn't repeated next time.
+   - If nothing is found (first time using `/taskfoundry:plan` in this repo), propose the default `docs/taskfoundry/plans/YYYY-MM-DD-<topic>.md` and ask the user to confirm it or give a different location — don't ask an open-ended question, and don't apply the default silently. Record whichever answer they give in that repo's `CLAUDE.md` (e.g. `Plan docs go in docs/taskfoundry/plans/YYYY-MM-DD-<topic>.md`) so the question isn't repeated next time.
 
 ## Common Mistakes
+- Silently applying the default path without confirmation — propose it, then wait for the user's yes or override.
 - Skipping the `Source` field — it's the only reason `/taskfoundry:develop` can fill the PR's `Related` section truthfully instead of guessing.
 - Writing the plan before reading the affected code — leads to tasks that don't match what the codebase actually needs.
 - Treating this as a substitute for full spec-and-plan work on multi-day features — it isn't.

@@ -13,12 +13,13 @@ Turn a just-finished meeting into a dated, consistently-formatted MOM entry — 
 - Not for logging tasks that didn't come from a meeting — a direct request or mastersheet item goes straight into `/taskfoundry:plan`'s `Source` field instead.
 
 ## Process
-1. **Find the MOM location**: check the target repo's `CLAUDE.md` for an existing convention. If none is recorded (first time using `/taskfoundry:mom-init` in this repo), ask the user once where MOM entries should live (e.g. `docs/mom/`), then record the answer in `CLAUDE.md` so it isn't asked again.
+1. **Find the MOM location**: check the target repo's `CLAUDE.md` for an existing convention. If none is recorded (first time using `/taskfoundry:mom-init` in this repo), propose the default `docs/taskfoundry/mom/YYYY-MM-DD-<topic>.md` and ask the user to confirm it or give a different location — don't ask an open-ended "where should this live" question, and don't apply the default silently. Record whichever answer they give in `CLAUDE.md` so it isn't asked again.
 2. **Get the meeting content**: if the user hasn't already provided it in the conversation, ask for the meeting title, key decisions, and any new tasks that came out of it.
-3. **Write the entry** using `references/template-mom.md`, filled in with what the user provided, saved as a dated file at the recorded location (e.g. `docs/mom/YYYY-MM-DD-<topic>.md`).
+3. **Write the entry** using `references/template-mom.md`, filled in with what the user provided, saved as a dated file at the recorded location (e.g. `docs/taskfoundry/mom/YYYY-MM-DD-<topic>.md`).
 4. **Confirm the file path back to the user.**
 
 ## Common Mistakes
-- Guessing a MOM location instead of checking `CLAUDE.md` first or asking once.
+- Guessing a MOM location instead of checking `CLAUDE.md` first, proposing the default, and confirming with the user.
+- Silently applying the default path without confirmation — propose it, then wait for the user's yes or override.
 - Skipping the `New Tasks` section — this is what `/taskfoundry:plan` reads to catch tasks that never made it into a mastersheet.
 - Writing a MOM entry for something that isn't a meeting output — direct requests belong in a plan doc's `Source` field, not a MOM entry.
