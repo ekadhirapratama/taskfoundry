@@ -13,13 +13,16 @@ Recompute task status (done/ongoing/todo) from ground truth — git/PR activity 
 - Not for mid-day status checks — this is a start-of-day reconciliation.
 
 ## Checklist
-1. **Summarize recent activity per active repo**: `git log --oneline -10` and `gh pr list --author @me` (or the repo's own convention) to see what actually shipped or is in review.
-2. **Check the mastersheet**: source varies per project (Google Sheet / Jira / markdown file). If unknown for this repo, ask the user once and note it — ideally recorded in that repo's `CLAUDE.md` so it isn't asked again next time.
-3. **Check prior meeting notes (MOM)**: read the MOM location recorded in this repo's `CLAUDE.md` (set up via `/taskfoundry:mom-init`). If no MOM convention is recorded yet, ask the user directly whether there's anything from a recent meeting to account for — don't assume a MOM file exists.
-4. **Reconcile**: compare step 1 (what actually happened) against steps 2-3 (what was supposed to happen) → classify each task as done / on-going / todo. Flag mismatches (e.g., committed but mastersheet still shows todo) instead of silently picking one source as truth.
-5. **Produce the meeting summary**: a short status list ready to report in the daily meeting.
+Locations come from the root `CLAUDE.md` (the project's top-level one; in a single-repo project, the repo's own). In a session with nobody to answer, write anything you would ask under "needs confirmation" instead of asking.
+
+1. **Use today's sync file if there is one**: when the root `CLAUDE.md` records a mastersheet sync location and it holds a file dated today, use it instead of pulling the mastersheet again.
+2. **Otherwise read the mastersheet, read-only**: source varies per project (Google Sheet / Jira / markdown file). If unknown, ask the user once and record it in the root `CLAUDE.md`.
+3. **Add the git/PR delta per active repo**: `git log --oneline -10` and `gh pr list --author @me` (or the repo's own convention) to see what actually shipped or is in review since then.
+4. **Check MOM entries, issues, and open plans** at the locations in the root `CLAUDE.md`. If no MOM location is recorded, ask the user whether a recent meeting needs accounting for — don't assume a file exists.
+5. **Reconcile**: classify each task as done / on-going / todo. Flag mismatches (e.g., committed but mastersheet still shows todo) instead of silently picking one source as truth.
+6. **Reply in chat, 25 lines at most, with no file**: a status list ready to report in the daily meeting, then mismatches and anything needing confirmation.
 
 ## Common Mistakes
-- Trusting the mastersheet without checking git/PR reality — it drifts when updates lag behind actual commits.
+- Trusting the mastersheet or sync file without checking git/PR reality — they drift when updates lag behind actual commits.
 - Assuming the same mastersheet type (sheet/Jira/md) across all repos — it's per-project, ask if unrecorded.
-- Assuming a MOM file exists at a guessed path instead of reading the convention `/taskfoundry:mom-init` recorded, or asking if none was recorded.
+- Writing to the mastersheet — this skill only reads it.
