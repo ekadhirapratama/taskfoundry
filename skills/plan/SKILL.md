@@ -39,7 +39,7 @@ Turn today's tasks into a plan no bigger than the task, shaped by the role doing
    - The header needs `Source`, `Role`, `Size`, and `Status`. `Source` is a mastersheet link, ticket ID, issue path, or `direct request`.
    - In `Depends`, list only real ordering between tasks; `/taskfoundry:orchestrate` runs on it.
    - Add any project-specific header fields the root `CLAUDE.md` requires. Never copy code or signatures into the plan.
-6. **Save it** where the root `CLAUDE.md` says. If nothing is recorded, propose `docs/taskfoundry/plans/YYYY-MM-DD-<topic>.md`, wait for the user's yes or override, and record the answer there.
+6. **Save it** where the root `CLAUDE.md` says. If nothing is recorded, propose `docs/taskfoundry/plans/YYYY-MM-DD-<topic>.md`, wait for the user's yes or override, and record the answer there. Never overwrite an existing plan; give the new one a different topic slug.
 7. **Check the limit**: `wc -l` the file. Over the limit means trim it or split it into batches, not raise the limit.
 
 ## Common Mistakes

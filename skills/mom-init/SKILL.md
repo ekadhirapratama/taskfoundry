@@ -20,7 +20,7 @@ Turn a just-finished meeting or a direct request into a dated, consistently-form
 ## Process
 1. **Find the location**: check the root `CLAUDE.md` (the project's top-level one; in a single-repo project, the repo's own) for this mode's location. If none is recorded, propose the default path above and ask the user to confirm it or give a different one — don't ask an open-ended "where should this live" question, and don't apply the default silently. Record the answer in `CLAUDE.md` so it isn't asked again.
 2. **Get the content**: if the user hasn't already provided it in the conversation, ask for the meeting title, key decisions, and new tasks — or, in `issue` mode, who asked and what they asked for.
-3. **Write one file** from this mode's template, one topic per file, within its line limit.
+3. **Write one file** from this mode's template, one topic per file, within its line limit. Never overwrite an existing file; give the new one a different topic slug.
 4. **Confirm the file path back to the user.**
 
 ## Common Mistakes
