@@ -21,7 +21,7 @@ Work today's plan to completion: split tasks by dependency, verify each against 
 | `test` | Report filled in; env recorded |
 
 ## Process
-1. **Classify tasks** from the tracker: independent tasks can run in parallel, dependent tasks must run chained. Work them one at a time by default. To run independent tasks in parallel, dispatch one subagent per task, using the agent the root `CLAUDE.md` (the project's top-level one) routes this role to, or the general-purpose agent if it names none.
+1. **Classify tasks** from the tracker: independent tasks can run in parallel, dependent tasks must run chained. Work them one at a time here. To run independent tasks in parallel, or work spanning several repos, use `/taskfoundry:orchestrate`, then come back here for the PR.
 2. **Run the role's done-check on each finished task.** If it fails, stop — fix or report before committing. Never commit past a failing check.
 3. **Update the plan's progress tracker** (the same file `/taskfoundry:plan` created) to reflect what's actually done. Skip this for `size=none`, which has no file.
 4. **Commit** using this detection order on the target repo:
